@@ -214,7 +214,7 @@ A: Modify the `styles/styles.css` file to adjust colors, fonts, and layout accor
 📣 Contact
 ----------
 
-For further questions or support, please reach out to your-slygrin005@gmail.com.
+For further questions or support, please reach out to slygrin005@gmail.com.
 
 * * * * *
 
