@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  --secondary-gradient: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  --glow-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--primary-gradient);
+  color: #333;
+}
+
+.futuristic-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 3rem;
+  width: 100%;
+  max-width: 60rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.5s ease;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.panel-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.panel-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.futuristic-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  color: #333;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.futuristic-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--glow-color);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.futuristic-button {
+  background: var(--secondary-gradient);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  color: #333;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.data-item {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.data-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.data-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.data-item:hover .data-icon {
+  transform: scale(1.1);
+}
+
+.data-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.data-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .glass-panel {
+    padding: 2rem;
+  }
+
+  .data-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-container .futuristic-input {
+  flex-grow: 1;
+}
+
+.weather-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.weather-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weather-location {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.weather-temp {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.weather-desc {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.recent-searches {
+  margin-top: 2rem;
+}
+
+.recent-searches h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.recent-search-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recent-search-item {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recent-search-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.loading-message {
+  text-align: center;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+}
+
+.dark-mode .glass-panel {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .panel-title,
+.dark-mode .weather-location,
+.dark-mode .weather-temp,
+.dark-mode .weather-desc,
+.dark-mode .recent-searches h3,
+.dark-mode .futuristic-input,
+.dark-mode .futuristic-button,
+.dark-mode .recent-search-item,
+.dark-mode .loading-message {
+  color: #fff;
+}
+
+.dark-mode .futuristic-input,
+.dark-mode .futuristic-button,
+.dark-mode .data-item,
+.dark-mode .recent-search-item {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .futuristic-input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .futuristic-button:hover,
+.dark-mode .data-item:hover,
+.dark-mode .recent-search-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 0.875rem;
+  border-top: 1px solid #ddd;
+}
